@@ -12,7 +12,7 @@ This repository contains a simple React and Node.js application Dockerized for e
 2. **Navigate to the project directory:**
 
     ```bash
-    cd your-repo
+    cd form-app
 
 3. **Build the Docker images:**
 
