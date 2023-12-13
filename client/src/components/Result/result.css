@@ -1,0 +1,25 @@
+.message {
+    width: 25em;
+    padding: 2em 4em;
+    border: 4px dashed;
+    border-radius: 1em;
+}
+
+.not-found {
+    border-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.found {
+    border-color: rgba(21, 255, 0, 0.5);
+    background-color: rgba(21, 255, 0, 0.3);
+}
+
+.record {
+    padding: .5em 2em;
+    text-align: left;
+}
+
+.record span {
+    margin-right: .5em;
+}

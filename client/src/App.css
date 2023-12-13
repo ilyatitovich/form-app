@@ -1,0 +1,24 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.warning-message {
+    display: block;
+    margin-top: 0.25em;
+    text-align: left;
+    font-size: 0.75rem;
+    color: rgb(231, 30, 30);
+    visibility: hidden;
+}
+
+.result {
+    margin-top: 2em;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
