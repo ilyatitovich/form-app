@@ -16,14 +16,15 @@ This repository contains a simple React and Node.js application Dockerized for e
 
 3. **Build the Docker images:**
 
-    ```
-    docker-compose build`
+    ```docker-compose build
 
 4. **Start the Docker containers:**
-    ```docker-compose up`
+
+    ```docker-compose up
 
     This will start the client and server containers. You can add the `-d` flag to run them in the background:
-    `docker-compose up -d`
+
+    ```docker-compose up -d
 
 5. **Access the App:**
 
