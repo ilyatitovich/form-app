@@ -7,27 +7,27 @@ This repository contains a simple React and Node.js application Dockerized for e
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/ilyatitovich/form-app.git`
+   git clone https://github.com/ilyatitovich/form-app.git
 
 2. **Navigate to the project directory:**
 
     ```bash
-    cd your-repo`
+    cd your-repo
 
 3. **Build the Docker images:**
 
     ```bash
-    docker-compose build`
+    docker-compose build
 
 4. **Start the Docker containers:**
 
     ```bash
-    docker-compose up`
+    docker-compose up
 
-    This will start the client and server containers. You can add the -d flag to run them in the background:
+    > This will start the client and server containers. You can add the -d flag to run them in the background:
 
     ```bash
-    docker-compose up -d`
+    docker-compose up -d
 
 5. **Access the App:**
 
