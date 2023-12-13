@@ -26,7 +26,7 @@ This repository contains a simple React and Node.js application Dockerized for e
 
 5. **Access the App:**
 
-    - The client app is available at [http://localhost:3000](http://localhost:5173/).
+    - The client app is available at [http://localhost:3000](http://localhost:3000/).
     - The server is running at [http://localhost:5000](http://localhost:5000/).
 
 ## Stopping the App
