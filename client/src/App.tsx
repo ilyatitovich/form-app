@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { validateEmail } from "./lib/utils";
 import { type Data } from "./lib/definitions";
 import Result from "./components/Result/Result";
@@ -43,7 +43,7 @@ export default function App() {
     }
 
     // send data
-    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         if (!validateEmail(email)) {

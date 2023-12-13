@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { body, ValidationChain } from "express-validator";
-import { Response, Request } from "express";
+import { type Response, type Request } from "express";
 import { type Data } from "./definitions";
 
 // handler for long response processing
@@ -41,8 +41,8 @@ export const linearSearch = (
     const result: Data[] = [];
 
     for (let item of fileData) {
-        // send all data if number exist or maby use && for strict result
-        if (number && (item.number === number || item.email === email)) {
+        // strict data if number exist or maby use || for less strict result and show all records depends on email or number
+        if (number && (item.number === number && item.email === email)) {
             result.push(item);
         } else if (!number && item.email === email) {
             result.push(item);
