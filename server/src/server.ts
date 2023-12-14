@@ -2,8 +2,8 @@ import express, { Response, Request } from "express";
 import { validationResult } from "express-validator";
 import cors from "cors";
 import {
-    validateEmailAndNumber,
-    linearSearch,
+    validateData,
+    searchRecords,
     readRecords,
     debounce,
 } from "../lib/utils";
@@ -11,7 +11,7 @@ import {
 const app = express();
 const port = 5000;
 
-const debounceTime = 5000;
+const delay = 5000; // imitation of long request processing
 
 app.use(cors());
 app.use(express.json());
@@ -27,7 +27,7 @@ const handleRequest = debounce(async (req: Request, res: Response) => {
 
     try {
         const records = await readRecords();
-        const foundItems = linearSearch(records, email, number);
+        const foundItems = searchRecords(records, email, number);
 
         res.send(foundItems);
     } catch (error) {
@@ -37,9 +37,13 @@ const handleRequest = debounce(async (req: Request, res: Response) => {
         );
         res.status(500).json({ error: "Internal Server Error" });
     }
-}, debounceTime);
+}, delay);
 
-app.post("/find", validateEmailAndNumber(), handleRequest);
+/* server-side data validation is necessary for security 
+since an attacker can bypass client-side validation 
+using proxy interceptors such as Burp Suite and others
+*/
+app.post("/find", validateData(), handleRequest);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

@@ -1,0 +1,8 @@
+.record {
+    padding: .5em 2em;
+    text-align: left;
+}
+
+.record span {
+    margin-right: .5em;
+}

@@ -4,7 +4,6 @@ import { body, ValidationChain } from "express-validator";
 import { type Response, type Request } from "express";
 import { type Data } from "./definitions";
 
-// handler for long response processing
 export const debounce = (
     handler: (req: Request, res: Response) => void,
     time: number
@@ -33,7 +32,7 @@ export const readRecords = async (): Promise<any[]> => {
 };
 
 // Search records
-export const linearSearch = (
+export const searchRecords = (
     fileData: Data[],
     email: string,
     number: string
@@ -42,7 +41,7 @@ export const linearSearch = (
 
     for (let item of fileData) {
         // strict data if number exist or maby use || for less strict result and show all records depends on email or number
-        if (number && (item.number === number && item.email === email)) {
+        if (number && item.number === number && item.email === email) {
             result.push(item);
         } else if (!number && item.email === email) {
             result.push(item);
@@ -52,8 +51,7 @@ export const linearSearch = (
     return result;
 };
 
-// Validate data from the client
-export const validateEmailAndNumber = (): ValidationChain[] => [
+export const validateData = (): ValidationChain[] => [
     body("email").isEmail().withMessage("Invalid email"),
     body("number")
         .optional({ nullable: true }) // Allow undefined or null

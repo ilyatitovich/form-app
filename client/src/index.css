@@ -17,56 +17,6 @@ body {
     min-height: 100vh;
 }
 
-form {
-    padding: 3em 5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    background-color: #213547;
-    border: 1px solid black;
-    border-radius: 1em;
-}
-
-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-align: left;
-    text-transform: uppercase;
-    color: #dfd9be;
-}
-
-input {
-    font: inherit;
-    padding: 0.5em;
-    background-color: #b4b6c4;
-    border: none;
-    border-radius: 4px;
-}
-
-form button {
-    display: block;
-    width: 8em;
-    padding: 0.75rem;
-    margin-top: 1rem;
-    background-color: #f7e596;
-    border: none;
-    border-radius: 4px;
-    font: inherit;
-    font-weight: bold;
-    color: #3a4346;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #f9e175;
-}
-
-form button:active {
-    transform: scale(.98);
-}
 
 ul {
     list-style: none;

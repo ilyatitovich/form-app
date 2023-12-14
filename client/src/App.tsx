@@ -1,8 +1,8 @@
 import "./App.css";
+import { type Data } from "./lib/definitions";
 import axios from "axios";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { validateEmail } from "./lib/utils";
-import { type Data } from "./lib/definitions";
 import Result from "./components/Result/Result";
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
 
     const [foundRecords, setFoundRecords] = useState<Data[]>([]);
 
-    const [requestCounter, setRequestCounter] = useState<number>(0);
+    const [requestCounter, setRequestCounter] = useState<0 | 1>(0);
 
     //mask for number field
     function handleNumChange(event: ChangeEvent<HTMLInputElement>) {
@@ -46,6 +46,7 @@ export default function App() {
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
+        // client-side data validation improves ux
         if (!validateEmail(email)) {
             setIsValidEmail(false);
             return;
@@ -91,7 +92,7 @@ export default function App() {
                                 isValidEmail ? "" : "visible"
                             }`}
                         >
-                            Please enter a valid email address.
+                            Please enter a valid email address
                         </small>
                     }
                 </div>
@@ -102,7 +103,6 @@ export default function App() {
                         type="text"
                         value={numberMask}
                         placeholder="00-00-00"
-                        max="8"
                         onChange={handleNumChange}
                     />
                 </div>
